@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { WebView } from 'react-native';
 
 
-class MyWebView extends Component {
+class GameScene extends Component {
 
-    
+    static propsType = {
+        source: PropTypes.string.isRequired
+    }
 
     constructor() {
         super(props);
@@ -15,4 +17,4 @@ class MyWebView extends Component {
     }
 }
 
-export default MyWebView;
+export default GameScene;

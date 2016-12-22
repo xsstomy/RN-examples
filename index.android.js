@@ -14,9 +14,9 @@ import {
   ListView,
   TouchableHighlight
 } from 'react-native';
-import MyWebView from './src/components/MyWebView';
 
-var URL = "http://www.xsstomy.com";
+
+import Nav from './src/components/Nav';
 
 export default class awesomeProject extends Component {
 
@@ -36,20 +36,12 @@ export default class awesomeProject extends Component {
   render() {
     return (
 
-      <View style={{ flex: 1, paddingTop: 22 }}>
-      <ListView
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) => <TouchableHighlight onPress={() => {this._onPressButton(rowData)}}>
-            <Text>{rowData}</Text>
-          </TouchableHighlight>}
-        />
-          <Text>{this.state.textContent}</Text>
-      </View>
+     <Nav />
     );
   }
 
   _onPressButton(data) {
-    this.setState({textContent: data});
+    this.setState({ textContent: data });
 
   }
 }
