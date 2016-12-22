@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="playStage" width="2698" height="1716" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="playerStageBgImg" source="playerStageBg_png" anchorOffsetX="0" width="2774" x="-68" y="0" anchorOffsetY="0" height="1852" locked="true"/>
+	<e:Group id="groupLeft" left="5" top="20" bottom="80" width="540">
+	</e:Group>
+	<e:Group id="groupRight" left="560" right="40" bottom="250" top="40">
+	</e:Group>
+	<e:Group id="groupPersonAnim" width="257" height="245" y="205" x="544" anchorOffsetX="0" anchorOffsetY="0">
+	</e:Group>
+	<e:Image width="2667" height="1500" source="gridBg_png" anchorOffsetX="0" anchorOffsetY="0" left="-45" top="0" locked="true"/>
+	<e:Image id="playerStagePlayers" scaleX="1" scaleY="1" source="playerStagePlayer_png" width="1851" height="1292" x="14" y="60" locked="true"/>
+	<e:Image id="show" width="553" height="457" y="99" x="1260" source="showone1_png" visible="false"/>
+	<e:Image id="logoPerson" source="logoPerson_png" rotation="0" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" width="1000" height="800" bottom="0" right="-117" visible="false"/>
+</e:Skin>

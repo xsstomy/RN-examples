@@ -1,0 +1,28 @@
+{"mc":{
+	"movie":{
+		"frameRate":6,
+		"labels":[
+			{"name":"play","frame":1,"end":2}
+			
+			],
+		"events":[
+			
+			],
+		"frames":[
+			
+			{
+			"res":"showtwo1",
+			"x":0,
+			"y":0
+			},
+			{
+			"res":"showtwo2",
+			"x":0,
+			"y":0
+			}
+			]
+}},
+	"res":{
+		"showtwo1":{"x":1,"y":228,"w":270,"h":226},
+		"showtwo2":{"x":1,"y":1,"w":270,"h":226}
+	}}
