@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {
     ListView,
-    TouchableHighlight
+    TouchableHighlight,
+    View,
+    Text,
+    WebView
 } from 'react-native';
 
 
@@ -12,7 +15,7 @@ class GameListView extends Component {
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         this.state = {
             dataSource: ds.cloneWithRows([
-                './html/one/index.html', './html/two/index.html'
+                'one', 'two'
             ]),
             textContent: 'hello world'
         };
@@ -24,15 +27,31 @@ class GameListView extends Component {
         this.setState({ textContent: data });
 
     }
+
     render() {
         return (<View style={{ flex: 1, paddingTop: 22 }}>
             <ListView
                 dataSource={this.state.dataSource}
-                renderRow={(rowData) => <TouchableHighlight onPress={() => { this._onPressButton(rowData) } }>
+                renderRow={(rowData) => <TouchableHighlight onPress={() => { 
+                    this.props.navigator.push({
+                        name: 'webview',
+                        htmlUrl: rowData
+                    });
+                 } }>
                     <Text>{rowData}</Text>
                 </TouchableHighlight>}
                 />
-            <Text>{this.state.textContent}</Text>
+                <Text>{this.state.textContent}</Text>
+                <WebView style={
+                    {
+                        backgroundColor: "#ff0000",
+                        height: 100
+                    }
+                } source={{baseUrl: '../../html/one/index.html'}}
+                    domStorageEnabled={true}
+                    javaScriptEnabled={true}
+                     />
+            
         </View>
         )
     }

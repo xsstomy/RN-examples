@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { WebView, Navigator, ListView, TouchableHighlight, Text } from 'react-native';
 
-import MyScene from '../pages/MyScene';
 
+
+import GameListView from './GameListView';
+import MyWebView from './MyWebView';
 class Nav extends Component {
     static propsType = {
         source: PropTypes.string.isRequired
@@ -24,18 +26,9 @@ class Nav extends Component {
     doRenderScene(router, navigator) {
         const self = this;
         if (router.name === 'list') {
-            return <ListView
-                dataSource={self.state.dataSource}
-                renderRow={(rowData) => <TouchableHighlight onPress={() => {
-                    navigator.push({
-                        name: 'webview'
-                    });
-                } }>
-                    <Text>{rowData}</Text>
-                </TouchableHighlight>}
-                />
+            return <GameListView navigator={navigator} />
         } else if (router.name === 'webview') {
-            return <WebView source={{ uri: "http://baidu.com" }} domStorageEnabled={true} javaScriptEnabled={true} />
+            return <MyWebView navigator={navigator} router={router}/>
         }
     }
 

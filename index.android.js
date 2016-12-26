@@ -15,22 +15,12 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-
 import Nav from './src/components/Nav';
-
 export default class awesomeProject extends Component {
 
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      dataSource: ds.cloneWithRows([
-        './html/one/index.html', './html/two/index.html'
-      ]),
-      textContent: 'hello world'
-    };
-
-    this._onPressButton = this._onPressButton.bind(this);
+  
   }
 
   render() {
