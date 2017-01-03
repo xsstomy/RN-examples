@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="fishLoading" width="2698" height="1716" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Rect id="colorBg" left="0" right="0" top="0" bottom="0" fillAlpha="0.51" fillColor="0x000000" locked="true"/>
-	<e:Image id="startBtn" width="704" height="238" x="1208" y="1148" source="playStartBtn_png" anchorOffsetX="0" anchorOffsetY="0"/>
-	<e:Image width="2100" height="180" x="-75.93" y="730.03" source="gameStartNotice_png" anchorOffsetX="0" anchorOffsetY="0"/>
-</e:Skin>

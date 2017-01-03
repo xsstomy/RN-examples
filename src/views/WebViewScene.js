@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, WebView, TouchableHighlight } from 'react-native';
 
-class MyWebView extends Component {
+class WebViewScene extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,7 +32,7 @@ class MyWebView extends Component {
                         renderError={() => { this.setState({ txt: 'renderError ' }) } } />
                 </View>
                 <View style={{ flex:1, top: -60, alignSelf: 'flex-end', justifyContent: 'center', alignItems: 'center' }}>
-                    <TouchableHighlight style={{ backgroundColor: 'red', width: 50, height: 50, borderRadius: 25, justifyContent: 'center', alignItems: 'center' }} onPress={() => {  this.props.navigator.push({
+                    <TouchableHighlight style={{position:'absolute', backgroundColor: 'red', width: 50, height: 50, borderRadius: 25, justifyContent: 'center', alignItems: 'center' }} onPress={() => {  this.props.navigator.push({
                         name: "list"
                     }) } }  >
                         <Text>
@@ -47,7 +47,7 @@ class MyWebView extends Component {
     }
 }
 
-export default MyWebView;
+export default WebViewScene;
 
 
 // <WebView style={

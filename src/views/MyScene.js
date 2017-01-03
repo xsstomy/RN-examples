@@ -12,9 +12,7 @@ export default class MyScene extends Component {
     render() {
         return (
             <View>
-                <Text>Current Scene: {this.props.title}</Text>
-
-               
+                <Text>Current Scene: {this.props.title}</Text>           
             </View>
         )
     }
