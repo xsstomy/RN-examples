@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, WebView, TouchableHighlight } from 'react-native';
-
+import { View, Text, WebView, TouchableHighlight, Navigator } from 'react-native';
+import Home from './Home';
 class WebViewScene extends Component {
     constructor(props) {
         super(props);
@@ -13,34 +13,35 @@ class WebViewScene extends Component {
 
         return (
             <View style={{
-                    backgroundColor: "#00ff00",
-                    flex: 1
-                }}>
+                flex: 1
+            }}>
                 <View style={{
-                        backgroundColor: "#ff0000",
-                        flex: 10000
-                    }}>
-                    <WebView style={{
-                        backgroundColor: "#ff0000",
-                        
-                    }}
+                    backgroundColor: "#ff0000",
+                    flex: 10000
+                }}>
+                    <WebView style={{backgroundColor: "#00ff00"}}
                         source={require("../../html/one/index.html")}
                         domStorageEnabled={true}
                         javaScriptEnabled={true}
                         onError={() => { this.setState({ txt: 'error' }) } }
-                        onLoad={() => { this.setState({ txt: this.props.router.htmlUrl }) } }
+                        onLoad={() => { this.setState({ txt: "" }) } }
                         renderError={() => { this.setState({ txt: 'renderError ' }) } } />
                 </View>
-                <View style={{ flex:1, top: -60, alignSelf: 'flex-end', justifyContent: 'center', alignItems: 'center' }}>
-                    <TouchableHighlight style={{position:'absolute', backgroundColor: 'red', width: 50, height: 50, borderRadius: 25, justifyContent: 'center', alignItems: 'center' }} onPress={() => {  this.props.navigator.push({
-                        name: "list"
-                    }) } }  >
+                <View style={{ flex: 1, top: -60, alignSelf: 'flex-end', justifyContent: 'center', alignItems: 'center' }}>
+                    <TouchableHighlight style={{backgroundColor: 'red', width: 50, height: 50, borderRadius: 25, justifyContent: 'center', alignItems: 'center' }}
+                        onPress={() => {
+                            this.props.navigator.push({
+                                component: Home,
+                                name: 'Home',
+                                configure:  Navigator.SceneConfigs.PushFromLeft
+                            })
+                        } }  >
                         <Text>
-                            +
+                            {this.props.route.htmlUrl}
             </Text>
                     </TouchableHighlight>
                 </View>
-                
+
             </View>
         )
 

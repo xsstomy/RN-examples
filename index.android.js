@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 
 import Nav from './src/components/Nav';
+import App from './src/index';
 export default class awesomeProject extends Component {
 
   constructor(props) {
@@ -26,7 +27,7 @@ export default class awesomeProject extends Component {
   render() {
     return (
 
-     <Nav />
+     <App />
     );
   }
 

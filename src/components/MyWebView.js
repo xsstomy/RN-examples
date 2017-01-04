@@ -28,7 +28,7 @@ class MyWebView extends Component {
                         domStorageEnabled={true}
                         javaScriptEnabled={true}
                         onError={() => { this.setState({ txt: 'error' }) } }
-                        onLoad={() => { this.setState({ txt: this.props.router.htmlUrl }) } }
+                        onLoad={() => { this.setState({ txt: '' }) } }
                         renderError={() => { this.setState({ txt: 'renderError ' }) } } />
                 </View>
                 <View style={{ flex:1, top: -60, alignSelf: 'flex-end', justifyContent: 'center', alignItems: 'center' }}>

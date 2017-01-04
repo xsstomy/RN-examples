@@ -2,7 +2,7 @@
 
 const initState = {};
 
-export function homeState(state = initState, action) {
+export default function HomeState(state = initState, action) {
     switch (action.type) {
         default:
             return state;
