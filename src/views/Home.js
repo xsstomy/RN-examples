@@ -13,8 +13,8 @@ class Home extends Component {
 
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         this.state = {
-            dataSource: ds.cloneWithRows([{name: 'one1', htmlUrl: '../../html/one/index.html'}
-                ,{name: 'two1', htmlUrl: '../../html/two/index.html'}
+            dataSource: ds.cloneWithRows([{name: 'one1', htmlUrl: require('../../html/one/index.html')}
+                ,{name: 'two1', htmlUrl: require('../../html/two/index.html')}
             ]),
             textContent: 'hello yitong'
         };

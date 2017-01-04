@@ -19,7 +19,7 @@ class WebViewScene extends Component {
                     flex: 10000
                 }}>
                     <WebView 
-                        source={require("../../html/one/index.html")}
+                        source={this.props.route.htmlUrl}
                         domStorageEnabled={true}
                         javaScriptEnabled={true}
                         startInLoadingState={true}
