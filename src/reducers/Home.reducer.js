@@ -1,9 +1,11 @@
 
 
-const initState = {};
+const initState = 0;
 
-export default function HomeState(state = initState, action) {
+export default function homeState(state = initState, action) {
     switch (action.type) {
+        case 'home':
+            return action.data;
         default:
             return state;
     }

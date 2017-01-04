@@ -16,32 +16,33 @@ class WebViewScene extends Component {
                 flex: 1
             }}>
                 <View style={{
-                    backgroundColor: "#ff0000",
                     flex: 10000
                 }}>
-                    <WebView style={{backgroundColor: "#00ff00"}}
+                    <WebView 
                         source={require("../../html/one/index.html")}
                         domStorageEnabled={true}
                         javaScriptEnabled={true}
+                        startInLoadingState={true}
+                        renderLoading={()=><Text style={{top: 100, alignSelf: 'center', justifyContent: 'center', alignItems: 'center'}}>正在加载页面...</Text>}
                         onError={() => { this.setState({ txt: 'error' }) } }
                         onLoad={() => { this.setState({ txt: "" }) } }
                         renderError={() => { this.setState({ txt: 'renderError ' }) } } />
                 </View>
-                <View style={{ flex: 1, top: -60, alignSelf: 'flex-end', justifyContent: 'center', alignItems: 'center' }}>
+                <View style={{flex: 1, top: -50, alignSelf: 'flex-end', justifyContent: 'center', alignItems: 'center' }}>
                     <TouchableHighlight style={{backgroundColor: 'red', width: 50, height: 50, borderRadius: 25, justifyContent: 'center', alignItems: 'center' }}
                         onPress={() => {
-                            this.props.navigator.push({
-                                component: Home,
-                                name: 'Home',
-                                configure:  Navigator.SceneConfigs.PushFromLeft
-                            })
+                            // this.props.navigator.push({
+                            //     component: Home,
+                            //     name: 'Home',
+                            //     configure:  Navigator.SceneConfigs.PushFromLeft
+                            // })
+                            this.props.navigator.pop();
                         } }  >
                         <Text>
-                            {this.props.route.htmlUrl}
+                            {'返回'}
             </Text>
                     </TouchableHighlight>
                 </View>
-
             </View>
         )
 
